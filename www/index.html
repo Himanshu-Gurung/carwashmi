@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Carwashmi</title>
+    <link rel="manifest" href="manifest.json">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/fonts.css" rel="stylesheet" type="text/css">
+    <link href="css/animation.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/ion-place-autocomplete.css" type="text/css">
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+    <script>
+		var config = {
+			apiKey: "AIzaSyDs1jhFqQ-Rg9n7NSl3XIcQzdekMWYnbM8",
+			authDomain: "carwashmi-1511692717214.firebaseapp.com",
+			databaseURL: "https://carwashmi-1511692717214.firebaseio.com",
+			projectId: "carwashmi-1511692717214",
+			storageBucket: "carwashmi-1511692717214.appspot.com",
+			messagingSenderId: "318016063112"
+		};
+		firebase.initializeApp(config);
+
+        // var config = {
+        //     apiKey: "AIzaSyCu4gEwJv2qzg_aFJZMJ8y3UsCNCiczlUg",
+        //     authDomain: "carwashmi-c3532.firebaseapp.com",
+        //     databaseURL: "https://carwashmi-c3532.firebaseio.com",
+        //     projectId: "carwashmi-c3532",
+        //     storageBucket: "",
+        //     messagingSenderId: "460850839706"
+        // };
+        // firebase.initializeApp(config);
+		
+    </script>
+    <script src="https://js.braintreegateway.com/web/3.9.0/js/client.min.js"></script>
+    <script src="https://js.braintreegateway.com/web/3.9.0/js/hosted-fields.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHGteu6pFELNRrEE8vjY9KsVjQAz1m6X8&libraries=places,geometry"></script>
+    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+    <script src="lib/ionic/js/angular-storage.min.js"></script>
+    <script src="lib/ionic/js/jquery.min.js"></script>
+    <script src="lib/ion-place-autocomplete.js"></script>
+    <script src="lib/ionic-autocomplete.bundle.min.js"></script>
+    <script src="lib/ng-cordova.min.js"></script>
+    <script src="lib/checkout.js"></script>
+    <script src="lib/ionic-ratings/src/ionic-ratings.js"></script>
+    <script src="lib/ionic-datepicker/dist/ionic-datepicker.bundle.min.js"></script>
+    <script src="lib/ionic-timepicker/dist/ionic-timepicker.bundle.min.js"></script>
+
+    <script src="cordova.js"></script>
+    <script src="lib/paypal-mobile-js-helper.js"></script>
+    <script src="js/payPalService.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/controllers/splashctrl.js"></script>
+    <script src="js/controllers/login.js"></script>
+    <script src="js/controllers/rating.js"></script>
+    <script src="js/controllers/washer.js"></script>
+    <script src="js/controllers/client.js"></script>
+    <script src="js/controllers/ratingCustomer.js"></script>
+    <script src="js/controllers/washer_home.js"></script>
+    <script src="js/controllers/payment.js"></script>
+    <script src="js/controllers/clientRequest.js"></script>
+    <script src="js/controllers/clientResponse.js"></script>
+    <script src="js/controllers/landing.js"></script>
+    <script src="js/controllers/washerNotification.js"></script>
+    <script src="js/controllers/my-wallet.js"></script>
+    <script src="js/controllers/clientHistory.js"></script>
+    <script src="js/controllers/schedule-request.js"></script>
+    <script src="js/controllers/home.js"></script>
+    <script src="js/controllers/clientRequestDetail.js"></script>
+    <script src="js/controllers/washerOnGoingJob.js"></script>
+    <script src="js/controllers/saveCreditCard.js"></script>
+    <script src="js/controllers/addPoints.js"></script>
+    <script src="js/controllers/locateWasher.js"></script>
+    <script src="js/controllers/locateClient.js"></script>
+    <script src="js/controllers/washerAccounts.js"></script>
+    <script src="js/controllers/my_cars.js"></script>
+    <script src="js/ios_splash.js"></script>
+</head>
+<body ng-app="carwashmi" class="platform-android platform-cordova platform-webview">
+<ion-nav-view>
+</ion-nav-view>
+</body>
+</html>

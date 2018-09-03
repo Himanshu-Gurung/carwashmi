@@ -1,0 +1,72 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "card.io.cordova.mobilesdk": {
+      "PACKAGE_NAME": "com.carwashmi.esfera"
+    },
+    "com.paypal.cordova.mobilesdk": {
+      "PACKAGE_NAME": "com.carwashmi.esfera"
+    },
+    "cordova-plugin-actionsheet": {
+      "PACKAGE_NAME": "com.carwashmi.esfera"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "com.carwashmi.esfera"
+    },
+    "cordova-plugin-app-event": {
+      "PACKAGE_NAME": "com.carwashmi.esfera"
+    },
+    "cordova-plugin-call-number": {
+      "PACKAGE_NAME": "com.carwashmi.esfera"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.carwashmi.esfera"
+    },
+    "cordova-plugin-datepicker": {
+      "PACKAGE_NAME": "com.carwashmi.esfera"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.carwashmi.esfera"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.carwashmi.esfera"
+    },
+    "cordova-plugin-fcm": {
+      "PACKAGE_NAME": "com.carwashmi.esfera"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.carwashmi.esfera"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.carwashmi.esfera"
+    },
+    "cordova-plugin-filepath": {
+      "PACKAGE_NAME": "com.carwashmi.esfera"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.carwashmi.esfera"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "com.carwashmi.esfera"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.carwashmi.esfera"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.carwashmi.esfera"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.carwashmi.esfera"
+    },
+    "cordova-sms-plugin": {
+      "PACKAGE_NAME": "com.carwashmi.esfera"
+    }
+  },
+  "dependent_plugins": {}
+}

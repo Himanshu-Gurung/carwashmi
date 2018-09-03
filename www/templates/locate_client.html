@@ -1,0 +1,33 @@
+<ion-view class="splash-screen">
+    <ion-pane>
+        <ion-header-bar align-title="center" class="header-bg">
+            <div ng-click="goBackClient()"><a class="button icon-left ion-chevron-left button-clear button-dark" style="color: #fff;">Back</a></div>
+            <img src="images/logo.png" style="width: 40%; margin-top: 0px; margin-left: 20%;">
+        </ion-header-bar>
+        <ion-content class="" id="ionContent" has-bouncing="true" scroll="false">
+            <div id="mapLocate" class="test" data-tap-disabled="true"></div>
+        </ion-content>
+
+        <div class="map_footer" ng-if="showLabel" style="padding-bottom: 40px;">
+            <label class="bike_washer ng-binding"
+                   style="color: #f8f8f8;padding: 10px 10px 10px 10px;background: rgb(74, 46, 119);width: 97%;display: block;margin: 0 auto;" disabled="">{{time}} to Destination</label>
+        </div>
+
+        <div class="map_footer button-bar" style="padding-bottom: 80px;">
+            <!-- <button ng-click="goToWasherOngoingJob()" class="bike_washer" style="display:{{visible}};  margin-left: 35%; padding: 10px 10px 10px 10px;">Start Washing
+            </button> -->
+        </div>
+    </ion-pane>
+    <div class="bar bar-footer">
+        <div class="button-bar">
+            <a class="button" ng-click="calling()" style="background: black;color: white;"><i class="ion-ios-telephone"
+                                                                                              style="font-size:25px;"></i></a>
+            <a class="button" ng-click="gotoMessage()" style="background: black;color: white;"><i class="ion-email"
+                                                                                                  style="font-size:25px;"></i></a>
+            <a class="button" ng-click="cancelRequest(clientRequestDetail,'customer')"
+               ng-hide="clientRequestDetail.client_request.is_payment_done==2"
+               style="background: black;color: white;"><i class="ion-close-round" style="font-size:25px;"></i></a>
+        </div>
+
+    </div>
+</ion-view>

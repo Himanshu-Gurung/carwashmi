@@ -1,0 +1,84 @@
+<ion-view class="splash-screen">
+    <ion-pane>
+        <ion-header-bar align-title="center" class="header-bg">
+            <div ui-sref="home" class="custom_space_top"><i class="icon ion-arrow-left-c" style="color: #fff;font-size: 30px;"></i></div>
+            <h1 class="title">Payments</h1>
+        </ion-header-bar>
+        <ion-content overflow-scroll="false" has-bouncing="true" style="margin-top:-44px;">
+            <div class="content has-header profile_edit">
+                <form novalidate name="paymentForm" ng-submit="validatePaymentInput(paymentForm)">
+                    <h2>Personal Information</h2>
+                    <div class="profile-form-row">
+                        <label>Card Number</label>
+                        <input type="number" name="cardNumber" placeholder="Enter 16 Digit Card Number"
+                               style="border:1px solid #ccc;color:#000;padding: 20px 0px 20px 10px;" ng-required="true"
+                               ng-model="payment.card_number" ng-maxlength="16" ng-minlength="16"/>
+                        <p class="error" style="color:red;"
+                           ng-show="paymentForm.cardNumber.$error.required && paymentForm.$submitted">Card Number is
+                            required</p>
+                        <p class="error" style="color:red;" ng-show="paymentForm.cardNumber.$error.maxlength">Enter 16
+                            digit Card Number</p>
+                        <p class="error" style="color:red;" ng-show="paymentForm.cardNumber.$error.minlength">Enter 16
+                            digit Card Number</p>
+                    </div>
+                    <div class="profile-form-row">
+                        <label>Card Name</label>
+                        <input type="text" name="cardName" placeholder="Enter Full Name"
+                               style="border:1px solid #ccc;color:#000;padding: 20px 0px 20px 10px;" ng-required="true"
+                               ng-model="payment.card_name"/>
+                        <p class="error" style="color:red;"
+                           ng-show="paymentForm.cardName.$error.required && paymentForm.$submitted">Name is required</p>
+                    </div>
+                    <div class="profile-form-row">
+                        <label>Expiry Month</label>
+                        <input type="number" name="expirymonth" placeholder="MM"
+                               style="border:1px solid #ccc;color:#000;padding: 20px 0px 20px 10px;" ng-required="true"
+                               ng-model="payment.expiry_month" ng-maxlength="2" ng-minlength="1"/>
+                        <p class="error" style="color:red;"
+                           ng-show="paymentForm.expirymonth.$error.required && paymentForm.$submitted">Expiry Month is
+                            required</p>
+                        <p class="error" style="color:red;" ng-show="paymentForm.expirymonth.$error.maxlength">Enter
+                            Month in 1 Digit</p>
+                        <p class="error" style="color:red;" ng-show="paymentForm.expirymonth.$error.minlength">Enter
+                            Month in 2 Digit</p>
+                    </div>
+                    <div class="profile-form-row">
+                        <label>Expiry Year</label>
+                        <input type="number" name="expiryyear" placeholder="YYYY"
+                               style="border:1px solid #ccc;color:#000;padding: 20px 0px 20px 10px;" ng-required="true"
+                               ng-model="payment.expiry_year" ng-maxlength="4" ng-minlength="4"/>
+                        <p class="error" style="color:red;"
+                           ng-show="paymentForm.expiryyear.$error.required && paymentForm.$submitted">Expiry Year is
+                            required</p>
+                        <p class="error" style="color:red;" ng-show="paymentForm.expiryyear.$error.maxlength">Enter Year
+                            in 4 Digit</p>
+                        <p class="error" style="color:red;" ng-show="paymentForm.expiryyear.$error.minlength">Enter Year
+                            in 4 Digit</p>
+                    </div>
+                    <div class="profile-form-row">
+                        <label>CVV Number</label>
+                        <input type="number" name="cvv" placeholder="CVV"
+                               style="border:1px solid #ccc;color:#000;padding: 20px 0px 20px 10px;" ng-required="true"
+                               ng-model="payment.cvv" ng-maxlength="3" ng-minlength="3"/>
+                        <p class="error" style="color:red;"
+                           ng-show="paymentForm.cvv.$error.required && paymentForm.$submitted">CVV Number is
+                            required</p>
+                        <p class="error" style="color:red;" ng-show="paymentForm.cvv.$error.maxlength">Enter CVV in 3
+                            Digit</p>
+                        <p class="error" style="color:red;" ng-show="paymentForm.cvv.$error.minlength">Enter CVV in 3
+                            Digit</p>
+                    </div>
+                    <div class="profile-form-row">
+                        <label>Amount ($)</label>
+                        <input type="number" name="amount" placeholder="Amount"
+                               style="border:1px solid #ccc;color:#000;padding: 20px 0px 20px 10px;" ng-required="true"
+                               ng-model="payment.amount" readonly/>
+                    </div>
+                    <div class="profile-form-row">
+                        <button class="button" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </ion-content>
+    </ion-pane>
+</ion-view>

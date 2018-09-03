@@ -1,0 +1,45 @@
+<ion-view class="splash-screen">
+    <ion-pane>
+        <ion-header-bar align-title="center" class="header-bg">
+            <div ng-click="back()"><i class="ion-ios-arrow-back" style="color: #fff;font-size: 30px;"></i></div>
+            <h1 class="title">Update My Services</h1>
+        </ion-header-bar>
+        <ion-content overflow-scroll="false" has-bouncing="true" style="margin-top:-44px;">
+            <div class="content has-header profile_edit">
+                <form ng-submit="update_service()">
+                    <div class="profile-form-row" ng-click="changeService(3)">
+                        <span>
+                            <input type="checkbox" name="serviceType" id="fast" ng-model="data.is_fast_service"
+                                     ng-checked="data.is_fast_service"/>
+                            <h2>Fast</h2>
+                        </span>
+                    </div>
+                    <div class="profile-form-row" ng-click="changeService(1)">
+                        <span>
+                            <input type="checkbox" name="serviceType" id="standard"
+                                     ng-model="data.is_standard_service" ng-checked="data.is_standard_service"/>
+                            <h2>Standard</h2>
+                        </span>
+                    </div>
+                    <div class="profile-form-row" ng-click="changeService(0)">
+                        <span>
+                            <input type="checkbox" name="serviceType" id="elite" ng-model="data.is_elite_service"
+                                     ng-checked="data.is_elite_service"/>
+                            <h2>Elite</h2>
+                        </span>
+                    </div>
+                    <div class="profile-form-row" ng-click="changeService(2)">
+                        <span>
+                            <input type="checkbox" name="serviceType" id="premium" ng-model="data.is_premium_service"
+                                     ng-checked="data.is_premium_service"/>
+                            <h2>Premium</h2>
+                        </span>
+                    </div>
+                    <div class="profile-form-row">
+                        <button class="button" type="submit">Update</button>
+                    </div>
+                </form>
+            </div>
+        </ion-content>
+    </ion-pane>
+</ion-view>

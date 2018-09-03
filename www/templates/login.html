@@ -1,0 +1,45 @@
+<ion-view view-title="Login" name="login-view">
+    <ion-pane>
+        <div class="splash-body"></div>
+        <ion-content overflow-scroll="false" has-bouncing="true">
+            <div class="login-ui">
+                <div class="login-logo">
+                    <img src="images/logo-nw.png"/>
+                </div>
+                <div class="login-form">
+                    <p>Enter your Registered Email Id <br>to access your account</p>
+                    <form novalidate name="loginForm" ng-submit="validateLoginInput(loginForm)">
+                        <div class="form-row">
+                            <img src="images/email.png">
+                            <input type="email" name="email" placeholder="Enter Email" ng-model="loginInput.email"
+                                   ng-required="true" autocomplete="false">
+                            <p class="error" style="color:red;"
+                               ng-show="loginForm.email.$error.required && loginForm.$submitted">Email is required</p>
+                            <p class="error" style="color:red;"
+                               ng-show="loginForm.email.$error.email && loginForm.$submitted">Not a valid email</p>
+                        </div>
+                        <div class="form-row">
+                            <img src="images/password.png">
+                            <input type="password" name="password" placeholder="Enter Password" ng-required="true"
+                                   ng-model="loginInput.password" ng-minlength="6"/>
+                            <p class="error" style="color:red;"
+                               ng-show="loginForm.password.$error.required && loginForm.$submitted">Password must be atleast 6 characters</p>
+                        </div>
+                        <div class="form-row">
+                            <button type="submit" class="button" style="background: #E1EBEE; color: #111;">Login
+                            </button>
+                        </div>
+                    </form>
+                    <div class="forgot_password">
+                        <a ui-sref="forgot-password"><p>Forgot Password</p></a>
+                    </div>
+                </div>
+                <div class="login-signup">
+                    <a ui-sref="choose-user">
+                        <button>Don't have account? Sign Up</button>
+                    </a>
+                </div>
+            </div>
+        </ion-content>
+    </ion-pane>
+</ion-view>

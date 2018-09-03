@@ -1,0 +1,28 @@
+<ion-view view-title="Rating">
+    <ion-pane>
+        <ion-header-bar align-title="center" class="header-bg">
+            <div ng-click="goBack()"><i class="ion-ios-arrow-back" style="color: #fff;font-size: 30px;"></i></div>
+            <h1 class="title">Rating to Washer</h1>
+        </ion-header-bar>
+        <ion-content class="has-header">
+
+
+            <ul class="list">
+
+                <li class="item" style="text-align: center;font-weight: bold;">Select Stars for Washer
+                    <ionic-ratings ratingsobj='ratingsObject' index='0' style="font-size: xx-large;"></ionic-ratings>
+                </li>
+                <li class="item"><label class="item item-input"><input type="text" class="review-text" placeholder="Enter Remarks if Any"
+                                                                       ng-model="rate.remarks"></label></li>
+
+
+                <li class="item">
+                    <button style="    background: #E1EBEE;
+    color: #111;" class="button button-block button-dark" ng-click="setCompletedStatus()">Submit Rating
+                    </button>
+                </li>
+            </ul>
+        </ion-content>
+    </ion-pane>
+</ion-view>
+

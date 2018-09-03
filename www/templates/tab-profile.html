@@ -1,0 +1,45 @@
+<ion-header-bar align-title="left" class="bar-positive">
+    <p style="font-size: 25px;
+    position: relative;
+    left: 25%;">Profile</p>
+</ion-header-bar>
+<ion-view>
+    <ion-content class="padding">
+        <div class="list space-page">
+
+
+            <label class="item item-input spc">
+                <span class="input-label">First Name</span>
+                <textarea placeholder="First Name" readonly> {{" "+loggedin_first_name}}</textarea>
+            </label>
+            <label class="item item-input spc">
+                <span class="input-label">Last Name</span>
+                <textarea placeholder="" readonly> {{" "+loggedin_last_name}}</textarea>
+            </label>
+            <label class="item item-input spc">
+                <span class="input-label">Username</span>
+                <textarea placeholder="" readonly> {{" "+loggedin_username}}</textarea>
+            </label>
+            <label class="item item-input spc">
+                <span class="input-label">Email</span>
+                <textarea placeholder="" readonly> {{" "+loggedin_email}}</textarea>
+            </label>
+            <label class="item item-input spc">
+                <span class="input-label">Phone</span>
+                <textarea placeholder="" readonly> {{" "+loggedin_phone_no}}</textarea>
+            </label>
+            <label class="item item-input spc">
+                <span class="input-label">Paypal Account</span>
+                <textarea placeholder="" readonly> {{" "+loggedin_paypal_acc}}</textarea>
+            </label>
+
+
+            <button ng-click="logout()" class="button button-block button-positive">Logout</button>
+
+            <button ng-click="donation()" class="button button-block button-positive">donation</button>
+
+
+        </div>
+
+    </ion-content>
+</ion-view>

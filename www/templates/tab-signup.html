@@ -1,0 +1,43 @@
+<ion-header-bar align-title="left" class="bar-positive">
+    <p style="font-size: 25px;
+    position: relative;
+    left: 25%;">Sign Up</p>
+</ion-header-bar>
+<ion-view>
+    <ion-content class="padding">
+        <form class="list">
+            <div class="list space-page">
+                <label class="item item-input spc">
+
+                    <input ng-model="data.first_name" type="text" placeholder="First name">
+                </label>
+                <label class="item item-input spc">
+
+                    <input ng-model="data.last_name" type="text" placeholder="Last name">
+                </label>
+
+                <label class="item item-input spc">
+
+
+                    <input ng-model="data.email" type="text" placeholder="Email Address">
+                </label>
+                <label class="item item-input spc">
+
+                    <input ng-model="data.username" type="text" placeholder="Username">
+                </label>
+                <label class="item item-input spc">
+
+                    <input ng-model="data.password" type="password" placeholder="Password">
+                </label>
+                <label class="item item-input spc">
+
+                    <input ng-model="data.phone_no" type="text" placeholder="Phone Number">
+
+                </label>
+            </div>
+            <button ng-click="signup(data)" class="button button-block button-positive">Sign up</button>
+
+
+        </form>
+    </ion-content>
+</ion-view>

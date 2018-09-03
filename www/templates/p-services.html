@@ -1,0 +1,76 @@
+<ion-view class="splash-screen">
+    <ion-pane>
+        <ion-header-bar align-title="center" class="header-bg">
+            <div ng-if="userType==0"><a ui-sref="legal" class="button icon-left ion-chevron-left button-clear button-dark" style="color: #fff;">Back</a></div>
+            <div ng-if="userType==1"><a ui-sref="legalwasher" class="button icon-left ion-chevron-left button-clear button-dark" style="color: #fff;">Back</a></div>
+            <h1 class="title">PRICING</h1>
+        </ion-header-bar>
+        <ion-content overflow-scroll="false" has-bouncing="true" class="has-header">
+            <div style="padding-top:10%;">
+                <table style="width:100%">
+                    <tr>
+                        <th></th>
+                        <th>Small Vehicle</th>
+                        <th>Medium Vehicle</th>
+                        <th>Large Vehicle</th>
+                        <th> Details</th>
+
+                    </tr>
+                    <tr>
+                        <td><h4> Fast Wash</h4></td>
+                        <td>20$</td>
+                        <td>23$</td>
+                        <td>25$</td>
+                        <td>
+                            <ul>
+                                <li>Hand Wash (exterior + tire)</li>
+                                <li> Vacuum</li>
+                            </ul>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td><h4> Standard Wash</h4></td>
+                        <td>25$</td>
+                        <td>28$</td>
+                        <td>30$</td>
+                        <td>
+                            <ul>
+                                <li>Hand Wash (exterior + tire)</li>
+                                <li> Vacuum + Wipe Down</li>
+                                <li> Tire Shine</li>
+                            </ul>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td><h4> Elite Wash</h4></td>
+                        <td>35$</td>
+                        <td>38$</td>
+                        <td>40$</td>
+                        <td>
+                            <ul>
+                                <li>Standard + Full interior Shine</li>
+                            </ul>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td><h4> Premium Wash</h4></td>
+                        <td> 50$</td>
+                        <td>55$</td>
+                        <td>60$</td>
+                        <td>
+                            <ul>
+                                <li>Standard + Interior Tire</li>
+                                <li> Leather seat treatment</li>
+                                <li> Exterior Waxing</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </ion-content>
+    </ion-pane>
+</ion-view>

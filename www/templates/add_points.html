@@ -1,0 +1,48 @@
+<ion-view class="splash-screen">
+    <ion-pane class="main_bg">
+        <ion-header-bar align-title="center" class="header-bg">
+            <div ui-sref="home" class="custom_space_top"><i class="icon ion-arrow-left-c" style="color: #fff;font-size: 30px;"></i></div>
+            <h1 class="title">Payment Method</h1>
+        </ion-header-bar>
+        <ion-content overflow-scroll="false" has-bouncing="true">
+            <div class="content profile_edit">
+                <div class="list">
+                    <h2>My Payment Method</h2>
+                    <div class="item item-button-right custom_icon" ng-if="point!='NULL'" style="display:{{displayPoint}}">
+                        <img src="images/{{card_type}}.png" style="width: 30px;">
+                        <span>{{point}}</span>
+                        <a class="button-assertive" style="color: #e42112;" ng-click="deleteCard(card_id)">
+                            <i class="icon ion-close"></i>
+                        </a>
+                    </div>
+                    <div class="item item-button-right custom_icon" ng-if="paypal!='NULL'" style="display:{{displayPoint}}">
+                        <img src="images/paypal.png" style="width: 30px;border: 1px solid #498aca;">
+                        <span>{{paypal}}</span>
+                        <a class="button-assertive" style="color: #e42112;" ng-click="deletePaypal()">
+                            <i class="icon ion-close"></i>
+                        </a>
+                    </div>
+                    <div class="profile-form-row">
+                        <button class="button" type="submit" ng-click="defaultCard(default1)" ng-if="flag=='0'" style="display:{{displayPoint}}">
+                            {{button}}
+                        </button>
+                    </div>
+
+                    <form novalidate name="pointsForm">
+                        <h2>Add Payment Method</h2>
+                        <div class="button-bar" style="padding: 10px 0px 10px 0px;">
+                            <button class="button button-outline" style="border-color: #769abf;color: #2D5A89;  border-radius: 0px;background: #fff;"
+                                    type="submit" ng-click="getPaypalAuthentication()">Add Paypal
+                            </button>
+                        </div>
+                        <div class="button-bar" style="padding: 0px 0px 10px 0px;">
+                            <button class="button button-outline icon ion-card"
+                                    style="border-color: #769abf;color: #2D5A89;  border-radius: 0px;background: #fff;" type="submit"
+                                    ng-click="getCreditCard()"> Credit & Debit Card
+                            </button>
+                        </div>
+                    </form>
+                </div>
+        </ion-content>
+    </ion-pane>
+</ion-view>

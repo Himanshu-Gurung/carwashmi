@@ -1,0 +1,41 @@
+<ion-header-bar align-title="left" class="bar-positive">
+    <p style="font-size: 25px;
+    position: relative;
+    left: 25%;">Profile</p>
+</ion-header-bar>
+<ion-view>
+    <ion-content class="padding">
+        <div class="list space-page">
+            <label class="item item-input spc">
+                <span class="input-label">First Name</span>
+                <textarea placeholder="First Name" readonly> {{" "+loggedin_first_name}}</textarea>
+                <span class="input-label">Last Name</span>
+                <textarea placeholder="" readonly> {{" "+loggedin_last_name}}</textarea>
+                <span class="input-label">Username</span>
+                <textarea placeholder="" readonly> {{" "+loggedin_username}}</textarea>
+                <span class="input-label">Email</span>
+                <textarea placeholder="" readonly> {{" "+loggedin_email}}</textarea>
+                <span class="input-label">Phone</span>
+                <textarea placeholder="" readonly> {{" "+loggedin_phone_no}}</textarea>
+            </label>
+
+            <div class="list space-page">
+                <label class="item item-input spc">
+                    <i class="ion-email padding-right"></i> <input ng-model="user.Name" type="name"
+                                                                   placeholder="Full Name">
+                </label>
+                <label class="item item-input">
+                    <i class="ion-locked padding-right"></i> <input ng-model="user.amount" type="amount"
+                                                                    placeholder="Enter amount">
+                </label>
+
+            </div>
+
+
+            <button ng-click="submit()" class="button button-block button-positive">Submit</button>
+
+
+        </div>
+
+    </ion-content>
+</ion-view>

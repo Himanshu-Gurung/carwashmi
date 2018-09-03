@@ -1,0 +1,29 @@
+<ion-view class="splash-screen">
+    <ion-pane>
+        <div class="splash-body"></div>
+            <h3 class="custom_registor_as">Register as</h3>
+        <ion-content overflow-scroll="false" has-bouncing="true">
+            <div class="accounttype-ui">
+                <div class="user-type-form">
+
+                    <div class="user-type-row">
+                        <a ui-sref="signup({'userType':'0'})">
+                            <button class="client_bg"><img src="images/sign-up-box.png"><br/><span>Client</span></button>
+                        </a>
+                    </div>
+                    <div class="user-type-row">
+                        <a ui-sref="signup({'userType':'1'})">
+                            <button class="washer_bg"><img src="images/sign-up-washer.png"><br/><span>Washer</span></button>
+                        </a>
+                    </div>
+                </div>
+                <div class="custom_back">
+                <h1 ui-sref="login">Back</h1>
+            </div>
+            </div>
+        </ion-content>
+        <!-- <ion-footer-bar align-title="center" class="bottom-bar">
+            
+        </ion-footer-bar> -->
+    </ion-pane>
+</ion-view>

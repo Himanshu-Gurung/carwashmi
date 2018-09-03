@@ -1,0 +1,57 @@
+<ion-view class="splash-screen">
+    <ion-pane>
+        <ion-header-bar align-title="center" class="header-bg">
+            <div><i ui-sref="home" class="icon ion-arrow-left-c" style="color: #fff;font-size: 30px;"></i></div>
+            <h1 class="title">Request Form</h1>
+        </ion-header-bar>
+        <ion-content overflow-scroll="false" has-bouncing="true" style="margin-top:-44px;">
+
+            <div class="content profile_edit">
+                <form novalidate name="clientRequestForm" ng-submit="getClientProfile(clientRequestForm, info)">
+                    <div class="content has-header profile_edit"><!--has-header-expand"-->
+                        <h2>Type of vehicle</h2>
+                        <div ng-init="info.vehicle ='0'">
+                            <div class="washing_row">
+                                <label><input type="Radio" name="vehicle" ng-click="changeVehicle(0)"
+                                              ng-model="info.vehicle" ng-value="'0'"/>Small</label>
+                            </div>
+                            <div class="washing_row">
+                                <label><input type="Radio" name="vehicle" ng-click="changeVehicle(1)"
+                                              ng-model="info.vehicle" ng-value="'1'"/>Medium</label>
+                            </div>
+                            <div class="washing_row">
+                                <label><input type="Radio" name="vehicle" ng-click="changeVehicle(2)"
+                                              ng-model="info.vehicle" ng-value="'2'"/>Large</label>
+                            </div>
+                        </div>
+                        <h2>Service Type</h2>
+                        <div ng-init="info.service ='0'">
+                            <div class="washing_row">
+                                <label><input type="Radio" name="service" ng-click="changeService(3)"
+                                              ng-model="info.service" ng-value="'3'"/>Fast</label>
+                            </div>
+							<div class="washing_row">
+                                <label><input type="Radio" name="service" ng-click="changeService(2)"
+                                              ng-model="info.service" ng-value="'1'"/>Standard</label>
+                            </div>
+                            <div class="washing_row">
+                                <label><input type="Radio" name="service" ng-click="changeService(0)"
+                                              ng-model="info.service" ng-value="'0'" ng-checked="true"/>Elite</label>
+                            </div>
+                            <div class="washing_row">
+                                <label><input type="Radio" name="service" ng-click="changeService(1)"
+                                              ng-model="info.service" ng-value="'2'"/>Premium</label>
+                            </div>
+
+
+                        </div>
+                        <div class="washing_row">
+                            <button class="button" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </ion-content>
+    </ion-pane>
+</ion-view>

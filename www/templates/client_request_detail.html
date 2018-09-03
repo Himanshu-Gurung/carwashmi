@@ -1,0 +1,108 @@
+<ion-view class="splash-screen">
+    <ion-pane>
+        <ion-header-bar align-title="center" class="header-bg">
+            <div><i ui-sref="history" class="icon ion-arrow-left-c" style="color: #fff;font-size: 30px;"></i></div>
+            <h1 class="title">Rating Page</h1>
+            <h1 class="title" ng-if="clientRequestDetail.client_request.is_request_open==5">
+                Ongoing Job details
+            </h1>
+        </ion-header-bar>
+        <ion-content overflow-scroll="false" has-bouncing="true" class="has-header">
+            <div class="content has-header washer_detail custom_top">
+                <div class="wash_counter custom_cars">
+                    <div style="background:#3fb3c0; padding:5px 10px;" ng-if="clientRequestDetail.client_request.is_request_open==8 || clientRequestDetail.client_request.is_request_open==9">
+                    Rated:<ionic-ratings ratingsobj='ratingsObject' index='0' style="font-size: xx-large; pointer-events:none !important;"></ionic-ratings>
+                    </div>
+                    <img src="images/car_wash.png" alt="image"/>
+                    <ul>
+                        <li>
+                            <span ng-if="clientRequestDetail.client_request.washer_type==1"><p>Car</p>Vehicle type</span>
+                            <span ng-if="clientRequestDetail.client_request.washer_type==0"><p>Bike</p>Vehicle type</span>
+                        </li>
+                    </ul>
+                    <div style="background:#000;padding:10px;"
+                         ng-if="clientRequestDetail.client_request.is_request_open==7 || clientRequestDetail.client_request.is_request_open==6 "
+                         ng-click="setJobCompleted(clientRequestDetail.client_request.client_request_id,clientRequestDetail.user.user_id)">
+                        Rate The Washer
+                    </div>
+                    <div style="background:#2D5A89;;padding:10px;"
+                         ng-if="clientRequestDetail.client_request.is_request_open==0">Status - Sent
+                    </div>
+                    <div style="background:#2D5A89;;padding:10px;"
+                         ng-if="clientRequestDetail.client_request.is_request_open==1">Status - Accepted
+                    </div>
+                    <div style="background:#2D5A89;;padding:10px;"
+                         ng-if="clientRequestDetail.client_request.is_request_open==2">Status - Rejected
+                    </div>
+                    <div style="background:#2D5A89;;padding:10px;"
+                         ng-if="clientRequestDetail.client_request.is_request_open==3 || clientRequestDetail.client_request.is_request_open==4">
+                        Status - Cancelled
+                    </div>
+                    <div style="background:#2D5A89;;padding:10px;"
+                         ng-if="clientRequestDetail.client_request.is_request_open==6">Status - Completed
+                    </div>
+                    <div style="background:#2D5A89;;padding:10px;"
+                         ng-if="clientRequestDetail.client_request.is_request_open==7">Status - Paid
+                    </div>
+                    
+                    <div style="background:#2D5A89;;padding:10px;"
+                         ng-if="clientRequestDetail.client_request.is_request_open==10">Status - Cancelled
+                    </div>
+                </div>
+                <div class="custom_washer_details">
+                <h3>Washer Detail</h3>
+                <div class="washer_detail_row">
+                    <h4>Name</h4>
+                    <p>{{clientRequestDetail.user.first_name+" "+clientRequestDetail.user.last_name}}</p>
+                </div>
+                <div class="washer_detail_row">
+                    <h4>Washer Location</h4>
+                    <p>{{clientRequestDetail.user.location}}</p>
+                </div>
+                <div class="washer_detail_row">
+                    <h4>Distance</h4>
+                    <p>{{clientRequestDetail.client_request.distance}}miles</p>
+                </div>
+                </div>
+                <!-- Test1 Start -->
+                <div ng-if="clientRequestDetail.is_trans_available" class="custom_transition">
+                    <div class="washer_detail_row">
+                        <h4>Transaction Id</h4>
+                        <p>{{clientRequestDetail.transaction_id}}</p>
+                    </div>
+                    <div class="washer_detail_row custom_transition1">
+                        <h4><i class="icon ion-cash"></i> Amount Paid</h4>
+                        <p>{{clientRequestDetail.amount | currency}}</p>
+                    </div>
+<!--                     <div class="washer_detail_row custom_transition1">
+                        <h4><i class="icon ion-cash"></i> Washer Received Amount</h4>
+                        <p>{{clientRequestDetail.washer_received_amount | currency}}</p>
+                    </div>
+                    <div class="washer_detail_row custom_transition1">
+                        <h4><i class="icon ion-cash"></i> Cancellation Fee</h4>
+                        <p>{{clientRequestDetail.cancellation_fee | currency}}</p>
+                    </div>
+                    <div class="washer_detail_row custom_transition1">
+                        <h4><i class="icon ion-pricetag"></i> Admin Service Charge</h4>
+                        <p>{{clientRequestDetail.admin_service_charge}}</p>
+                    </div> -->
+                </div>
+                <!-- Test1 End -->
+            </div>
+        </ion-content>
+        <div class="action_footer">
+            <ul ng-if="clientRequestDetail.client_request.is_payment_done==1 && clientRequestDetail.timeAgo!=null"
+                ng-click="cancelRequest(clientRequestDetail)">
+                <li style="width:100%">
+                    <button class="accept_button" style="background:#03b8fc;">Cancel Request</button>
+                </li>
+            </ul>
+            <ul ng-if="clientRequestDetail.client_request.is_payment_done==2" &&
+                ng-if="clientRequestDetail.client_request.is_job_completed==0">
+                <li style="width:100%">
+                    <button class="decline_button">Cancelled</button>
+                </li>
+            </ul>
+        </div>
+    </ion-pane>
+</ion-view>

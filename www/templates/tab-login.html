@@ -1,0 +1,53 @@
+<ion-side-menus>
+
+    <ion-side-menu>
+        <ion-header-bar align-title="left" class="bar-positive">
+        </ion-header-bar>
+        <ion-content>
+
+
+            <ion-item menu-close ng-href="#/login">
+                Login
+            </ion-item>
+            <ion-item menu-close ng-click="signuppage()">Signup</ion-item>
+
+
+            </div>
+        </ion-content>
+    </ion-side-menu>
+
+
+    <ion-side-menu-content>
+        <ion-header-bar align-title="left" class="bar-positive">
+            <div class="buttons">
+                <button menu-toggle class="button button-icon icon ion-navicon"></button>
+            </div>
+            <p style="font-size: 25px;
+    position: relative;
+    left: 25%;">Login</p>
+        </ion-header-bar>
+        <ion-view>
+            <ion-content class="padding">
+                <form class="list">
+
+
+                    <div class="list space-page">
+                        <label class="item item-input spc">
+                            <i class="ion-email padding-right"></i> <input ng-model="user.email" type="email"
+                                                                           placeholder="Email address">
+                        </label>
+                        <label class="item item-input">
+                            <i class="ion-locked padding-right"></i> <input ng-model="user.password" type="password"
+                                                                            placeholder="Password">
+                        </label>
+
+                    </div>
+                    <button class="button button-block button-positive" ng-click="login(user)">Sign in</button>
+
+                    <a href="#/signup" class="button button-balanced button-clear button-block ">Or create an
+                        account</a>
+                </form>
+            </ion-content>
+        </ion-view>
+    </ion-side-menu-content>
+</ion-side-menus>

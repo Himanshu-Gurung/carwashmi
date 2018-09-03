@@ -1,0 +1,22 @@
+<ion-view view-title="Campaign" name="campaign-view">
+
+    <ion-content class="padding">
+        <ion-list>
+            <ion-item ng-repeat="item in data">
+
+
+                <a class="item item-avatar" href="#">
+                    <img ng-src="{{ item.image }}">
+                    <h2>{{ item.camp_name}} </h2>
+                    <h3> {{ item.user }}</h3>
+                    <p>{{ item.camp_description }}</p>
+                </a>
+
+
+            </ion-item>
+
+        </ion-list>
+    </ion-content>
+
+</ion-view>
+

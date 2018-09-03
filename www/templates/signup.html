@@ -1,0 +1,66 @@
+<ion-view class="splash-screen">
+    <ion-pane>
+        <div class="splash-body"></div>
+        <ion-content overflow-scroll="false" has-bouncing="true">
+            <div class="signup-ui">
+                    <div class="login-logo hide-on-keyboard-open">
+                        <li><img src="images/logo-nw.png" alt="logo"/></li>
+                    </div>
+
+                    <div class="login-form">
+                        <p>Sign Up with Email</p>
+                        <form novalidate name="signupForm" ng-submit="validateSignupInput(signupForm)">
+                            <div class="form-row">
+                                <img src="images/email.png">
+                                <input type="email" name="email" placeholder="Enter email" ng-model="signupInput.email"
+                                       ng-required="true" autocomplete="false">
+                                <p class="error" style="color:red;"
+                                   ng-show="signupForm.email.$error.required && signupForm.$submitted">Email is
+                                    required</p>
+                                <p class="error" style="color:red;"
+                                   ng-show="signupForm.email.$error.email && signupForm.$submitted">Not a valid
+                                    email</p>
+                            </div>
+                            <div class="form-row">
+                                <img src="images/email.png">
+                                <input type="email" name="email2" placeholder="Confirm email"
+                                       ng-model="signupInput.email2" ng-required="true" autocomplete="false">
+                                <p class="error" style="color:red;"
+                                   ng-show="signupForm.email.$error.required && signupForm.$submitted">Email is
+                                    required</p>
+                                <p class="error" style="color:red;"
+                                   ng-show="signupForm.email2.$error.email && signupForm.$submitted">Not a valid
+                                    email</p>
+                            </div>
+                            <div class="form-row">
+                                <img src="images/password.png">
+                                <input type="password" name="password" placeholder="Enter Password" ng-required="true"
+                                       ng-model="signupInput.password" ng-minlength="6"/>
+                                <p class="error" style="color:red;"
+                                   ng-show="signupForm.password.$error.required && signupForm.$submitted">Password must be atleast 6 characters</p>
+                            </div>
+                            <div class="form-row">
+                                <img src="images/password.png">
+                                <input type="password" name="passwordCnf" placeholder="Confirm Password"
+                                       ng-required="true" ng-model="signupInput.passwordCnf" ng-minlength="6"/>
+                                <p class="error" style="color:red;"
+                                   ng-show="signupForm.passwordCnf.$error.required && signupForm.$submitted">Password must be atleast 6 characters</p>
+                            </div>
+                            <p class="error" style="color:red;" ng-show="compareemail">email and confirm email didn't
+                                match</p>
+                            <p class="error" style="color:red;" ng-show="comparePwd">Password didn't match!</p>
+                            <div class="form-row">
+                                <button class="button" style="background: #E1EBEE; color: #111;" type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="login-signup">
+                        <a ui-sref="login">
+                            <button>Already have account? Login</button>
+                        </a>
+                    </div>
+                </div>
+           
+        </ion-content>
+    </ion-pane>
+</ion-view>

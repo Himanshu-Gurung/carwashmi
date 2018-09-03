@@ -1,0 +1,70 @@
+<ion-view class="splash-screen">
+    <ion-pane>
+        <ion-header-bar align-title="center" class="header-bg">
+            <div ui-sref="home" class="custom_space_top"><i class="icon ion-arrow-left-c" style="color: #fff;font-size: 30px;"></i></div>
+            <h1 class="title">My Profile</h1>
+        </ion-header-bar>
+        <ion-content overflow-scroll="false" has-bouncing="true" style="margin-top:-44px;">
+            <div class="content has-header profile_edit">
+                <form novalidate name="clientForm" id="clientForm" ng-submit="validateClientInput(clientForm)">
+                    <h2>Personal Information</h2>
+                    <div class="profile-form-row">
+                        <label>First Name</label>
+                        <input type="text" name="firstName" placeholder="Enter First Name"
+                               style="color:#000;padding: 20px 0px 20px 10px;" ng-required="true"
+                               ng-model="user.first_name"/>
+                        <p class="error" style="color:red;"
+                           ng-show="clientForm.firstName.$error.required && clientForm.$submitted">First Name is
+                            required</p>
+                    </div>
+                    <div class="profile-form-row">
+                        <label>Last Name</label>
+                        <input type="text" name="" placeholder="Enter Last Name"
+                               style="color:#000;padding: 20px 0px 20px 10px;"
+                               ng-model="user.last_name"/>
+                    </div>
+                    <div class="profile-form-row">
+                        <label>Date of Birth</label>
+                        <input type="text" name="dob" placeholder="MM/DD/YYYY"
+                               ng-pattern='/^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ '
+                               style="color:#000;padding: 20px 0px 20px 10px;"
+                               ng-model="user.dob"/>
+                        <p class="error" style="color:red;" ng-show="clientForm.dob.$error.pattern">Incorrect Format,
+                            should be MM/DD/YYYY!</p>
+                    </div>
+                    <div class="profile-form-row">
+                        <label>Mobile Number</label>
+                        <input id="userMobileNumber" type="text" name="mobileNumber" placeholder="Enter Mobile Number"
+                               style="color:#000;padding: 20px 0px 20px 10px;" ng-required="true"
+                               ng-model="user.mobile_number" ng-maxlength="10" ng-minlength="10"/>
+                        <p class="error" style="color:red;"
+                           ng-show="clientForm.mobileNumber.$error.required && clientForm.$submitted">Mobile Number is
+                            required</p>
+                        <p class="error" style="color:red;" ng-show="clientForm.mobileNumber.$error.maxlength">Enter 10
+                            digit Mobile Number</p>
+                        <p class="error" style="color:red;" ng-show="clientForm.mobileNumber.$error.minlength">Enter 10
+                            digit Mobile Number</p>
+                    </div>
+                    <div class="profile-form-row">
+                        <label>Location</label>
+                        <input type="text" name="location" placeholder="Enter Location" ng-model="place"
+                               g-places-autocomplete ng-change="getGoogleLocation(place)"
+                               style="color:#000;padding: 20px 0px 20px 10px;"
+                               ng-required="true"/>
+                        <p class="error" style="color:red;"
+                           ng-show="clientForm.location.$error.required && clientForm.$submitted">Location is
+                            required</p>
+                        <p ng-if="!placeSelected && place.length>0" class="error" style="color:red;">Select Correct
+                            location</p>
+                        <button class="button" type="submit" ng-if="firstLoginVal=='0'">Submit</button>
+                    </div>
+                    <div class="profile-form-row">
+                        <button class="button" type="button" ng-if="firstLoginVal=='1'" ng-click="enableEdit('0',1)">
+                            Edit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </ion-content>
+    </ion-pane>
+</ion-view>

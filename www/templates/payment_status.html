@@ -1,0 +1,16 @@
+<ion-view class="splash-screen">
+    <ion-pane>
+        <ion-header-bar align-title="center" class="header-bg">
+            <h1 class="title">Payment Status</h1>
+        </ion-header-bar>
+        <ion-content overflow-scroll="false" has-bouncing="true">
+            <div class="payment_status" style="margin-top:30%">
+                <img src="images/payment_scuess.png" alt="image" ng-if="status==1"/>
+                <img src="images/payment_error.png" alt="image" ng-if="status==0"/>
+                <p ng-if="status==1">Your transaction sucessfully done</p>
+                <p ng-if="status==0">Your transaction could not be processed</p>
+                <button ui-sref="home">Done</button>
+                <div>
+        </ion-content>
+    </ion-pane>
+</ion-view>

@@ -1,0 +1,93 @@
+<ion-view view-title="Home">
+    <ion-pane>
+        <ion-side-menus>
+            <div class="custom_leftbar">
+                <!-- Left menu -->
+                <ion-side-menu side="left" class="nav_bg">
+                    <ion-content>
+                        <div class="menu_profile_image" ng-if="washerConfirmed=='1'">
+                            <img ng-src="{{profilePic}}" alt="image" ng-click="loadImage()"/>
+                            <span class="menu_user_name" style="font-size: small; font-weight: bold;" 
+                            ng-click="loadImage()">Click to Upload Image</span>
+                            <span class="menu_user_name">{{name}}</span>
+                        </div>
+                        <ul>
+                            <li ng-if="washerConfirmed=='1'" nav-clear menu-close ui-sref="washer-profile">
+                                <i class="icon icon ion-person"></i>&nbsp;Profile
+                            </li>
+                            <li ng-if="washerConfirmed=='1'" nav-clear menu-close ui-sref="washer-notification">
+                                <i class="icon icon ion-calendar"></i>&nbsp;My Jobs
+                            </li>
+                            <li ng-if="washerConfirmed=='1'" nav-clear menu-close ui-sref="my-wallet">
+                                <i class="icon icon ion-card"></i>&nbsp;My Wallet
+                            </li>
+                            <li ng-if="washerConfirmed=='1'" nav-clear menu-close ui-sref="update-washer-service">
+                                <i class="icon icon ion-settings"></i>&nbsp;My Services
+                            </li>
+                            <li ng-if="washerConfirmed=='1'" nav-clear menu-close ui-sref="changepasswordwasher">
+                                <i class="icon icon ion-locked"></i>&nbsp;Change Password
+                            </li>
+                            <li nav-clear menu-close ui-sref="legal">
+                                <i class="icon icon ion-shuffle"></i>&nbsp;Legal
+                            </li>
+                            <li nav-clear menu-close ui-sref="contact-us">
+                                <i class="icon ion-android-contact"></i>&nbsp;Contact Us
+                            </li>
+                            <li nav-clear menu-close ng-click="logout()">
+                                <i class="icon icon ion-power"></i>&nbsp;Logout
+                            </li>
+                        </ul>
+                    </ion-content>
+                </ion-side-menu>
+            </div>
+            <ion-side-menu-content overflow-scroll="false" has-bouncing="true">
+                <div class="bar bar-header header-bg custom_home" style="margin-top: 0px;">
+                    <button style="margin-top: 0px;" ng-click="toggleLeft();"><i class="ion-navicon-round"></i></button>
+                    <img src="images/logo.png" style="width: 40%; margin-top: 0px; margin-left: 20%;">
+                </div>
+                <div class="custom_req">
+                <ion-content class="" id="ionContent" has-bouncing="true">
+                    <div class="content has-header profile_edit custom_washer_home"><!--has-header-expand"-->
+                        <div class="wash_counter">
+                            <img src="images/washer_img.png" alt="image" style="margin-top: 15px;"/>
+                            <ul>
+                                <li ng-if="washerConfirmed=='0'" style="color:black">Your account is under review. You will receive verification confirmation by email.
+                                </li>
+                                <li ng-if="washerConfirmed=='1'"><span style="color:black"><p>{{counter}}</p>Car Wash</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <h2>Notifications</h2>
+                        <div style="text-align:center;margin-top:10%;" ng-show="notificationList.length==0">No Record Found!
+                        </div>
+                        <div class="notification-row" ng-repeat="notification in notificationList"
+                             ng-click="gotoResponse(notification)">
+                            <div class="notification-row-left">
+                                <img src="images/car_wash.png" alt="image"/>
+                            </div>
+                            <div class="notification-row-right">
+                                <span class="" ng-if="notification.vehicle_type==0">Type of vehicle<p>Sedan</p></span>
+                                <span class="" ng-if="notification.vehicle_type==1">Type of vehicle<p>SUV</p></span>
+                                <span class="" ng-if="notification.vehicle_type==2">Type of vehicle<p>Truck</p></span>
+
+                                <span class="" ng-if="notification.service_type==0">Service Type<p>Elite</p></span>
+                                <span class="" ng-if="notification.service_type==1">Service Type<p>Premium</p></span>
+                                <span class="" ng-if="notification.service_type==2">Service Type<p>Standard</p></span>
+                                <span class="" ng-if="notification.service_type==3">Service Type<p>Fast</p></span>
+
+                                <span class="" ng-if="notification.points!=0">Service Cost<p ng-bind="'$' + notification.points"></p></span>
+                                <span class=""
+                                      ng-if="notification.is_request_open==0 && notification.is_washer_accepted==0">Status<p
+                                        style="color:green;">Open</p></span>
+                                <span class=""
+                                      ng-if="notification.is_request_open==0 && (notification.is_washer_accepted==2 || notification.is_washer_accepted==3)">Status<p
+                                        style="color:red;">Rejected</p></span>
+                            </div>
+                        </div>
+                    </div>
+                </ion-content>
+                </div>
+            </ion-side-menu-content>
+        </ion-side-menus>
+    </ion-pane>
+</ion-view>

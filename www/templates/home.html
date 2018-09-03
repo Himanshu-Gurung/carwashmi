@@ -1,0 +1,66 @@
+<ion-view view-title="Home" src="images/white_logo.png">
+    <ion-pane>
+        <ion-side-menus>
+            <div class="custom_leftbar">
+            <!-- Left menu -->
+            <ion-side-menu side="left" class="nav_bg">
+                <ion-content>
+                    <div class="menu_profile_image">
+                        <img ng-src="{{profilePic}}" alt="image" ng-click="loadImage()"/>
+                        <span class="menu_user_name" style="font-size: small;font-weight: bold;" ng-click="loadImage()">Click to Upload Image</span>
+                        <span class="menu_user_name">{{name}}</span>
+                    </div>
+                    <ul>
+                        <li nav-clear menu-close ui-sref="client-profile">
+                            <i class="icon icon ion-person"></i>&nbsp;Profile
+                        </li>
+                        <li nav-clear menu-close ui-sref="nearby-washers">
+                            <i class="icon icon ion-location"></i>&nbsp;Nearby Washers
+                        </li>
+                        <li nav-clear menu-close ui-sref="my-cars">
+                            <i class="icon ion-android-car"></i>&nbsp;My Cars
+                        </li>
+                        <li nav-clear menu-close ui-sref="add_points">
+                            <i class="icon icon ion-cash"></i>&nbsp;Payment Method
+                        </li>
+                        <li nav-clear menu-close ui-sref="history">
+                            <i class="icon icon ion-calendar"></i>&nbsp;My Requests
+                        </li>
+                        <li nav-clear menu-close ui-sref="schedule-request">
+                            <i class="icon icon ion-calendar"></i>&nbsp;My Scheduled Requests
+                        </li>
+                        <li nav-clear menu-close ui-sref="change-password">
+                            <i class="icon icon ion-locked"></i>&nbsp;Change Password
+                        </li>
+                        <li nav-clear menu-close ui-sref="legal">
+                            <i class="icon icon ion-shuffle"></i>&nbsp;Legal
+                        </li>
+                        <li nav-clear menu-close ui-sref="contact-us">
+                            <i class="icon ion-android-contact"></i>&nbsp;Contact Us
+                        </li>
+                        <li nav-clear menu-close ng-click="logout()">
+                            <i class="icon icon ion-power"></i>&nbsp;Logout
+                        </li>
+                    </ul>
+                </ion-content>
+            </ion-side-menu>
+        </div>
+            <ion-side-menu-content overflow-scroll="false" has-bouncing="true">
+                <div class="bar bar-header header-bg custom_home" style="margin-top: 0px;">
+                    <button style="margin-top: 0px;" menu-toggle="left"><i class="ion-navicon-round"></i></button>
+                    <img src="images/logo.png" style=" width: 40%; margin-top: 0px; margin-left: 20%; height:60px;">
+                </div>
+                <ion-content class="" id="ionContent" has-bouncing="true" scroll="false">
+                    <div id="map" class="test" data-tap-disabled="true"></div>
+                </ion-content>
+                <div class="map_footer">
+                    <ul>
+                        <li>
+                            <button class="bike_washer" ui-sref="client-request">Request Washer</button>
+                        </li>
+                    </ul>
+                </div>
+            </ion-side-menu-content>
+        </ion-side-menus>
+    </ion-pane>
+</ion-view>

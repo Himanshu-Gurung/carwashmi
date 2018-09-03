@@ -1,0 +1,55 @@
+<ion-view class="splash-screen">
+    <ion-pane>
+        <ion-header-bar align-title="center" class="header-bg">
+            <div ui-sref="washer-home"><i class="icon ion-arrow-left-c" style="color: #fff;font-size: 30px;"></i></div>
+            <h1 class="title">History</h1>
+        </ion-header-bar>
+        <div class="custom_req">
+        <ion-content overflow-scroll="false" has-bouncing="true">
+            <div style="text-align:center;margin-top:10%;" ng-show="notificationList.length==0">No Record Found!</div>
+            <div class="notification-row" ng-repeat="notification in notificationList">
+                <div class="notification-row-left">
+                    <img src="images/car_wash2.png" alt="image"/>
+                </div>
+                <div class="notification-row-right" ng-click="gotoResponse(notification)">
+                    <span class="" ng-if="notification.vehicle_type==0">Type of vehicle<p>Sedan</p></span>
+                    <span class="" ng-if="notification.vehicle_type==1">Type of vehicle<p>SUV</p></span>
+                    <span class="" ng-if="notification.vehicle_type==2">Type of vehicle<p>Truck</p></span>
+<!--                     <span class="" ng-if="notification.service_type==0">Service Type<p>Elite</p></span>
+                    <span class="" ng-if="notification.service_type==2">Service Type<p>Standard</p></span>
+                    <span class="" ng-if="notification.service_type==1">Service Type<p>Premium</p></span> -->
+                    <span class="">Service Cost<p>{{notification.points}}</p></span>
+
+
+                    <span class="" ng-if="notification.is_request_open==0">Status<p style="color:green;">Sent</p></span>
+                    <span class="" ng-if="notification.is_request_open==1">Status<p
+                            style="color:red;">Accepted</p></span>
+                    <span class="" ng-if="notification.is_request_open==2">Status<p
+                            style="color:red;">Rejected</p></span>
+                    <span class="" ng-if="notification.is_request_open==3 || notification.is_request_open==4">Status<p
+                            style="color:red;">Cancelled</p></span>
+                    <span class="" ng-if="notification.is_request_open==5">Status<p
+                            style="color:red;">Ongoing</p></span>
+                    <span class="" ng-if="notification.is_request_open==6">Status<p
+                            style="color:red;">Completed</p></span>
+                    <span class="" ng-if="notification.is_request_open==7">Status<p style="color:red;">Paid</p></span>
+                    <span class="" ng-if="notification.is_request_open==8 || notification.is_request_open==9">Status<p
+                            style="color:red;">Rated</p></span>
+                    <span class="" ng-if="notification.is_request_open==10">Status<p
+                            style="color:red;">Cancelled</p></span>
+                    <span class="">Customer Rating<p>{{notification.customer_rating}}</p></span>
+                    <span class="">Washer Rating<p>{{notification.washer_rating}}</p></span>
+                </div>
+                <div style="color:#00aff0;" ng-click="goToLocation(notification)"
+                     ng-if="notification.is_request_open==1">Locate Client
+                </div>
+                <!-- <div style="color:#00aff0;" ng-click="goToLocation(notification)"
+                     ng-if="notification.is_request_open==1 && notification.is_washer_accepted==1 && notification.is_request_open==5">
+                    Locate Client
+                </div> -->
+            </div>
+            </div>
+        </ion-content>
+        </div>
+    </ion-pane>
+</ion-view>

@@ -1,0 +1,24 @@
+<ion-view class="splash-screen">
+    <ion-pane>
+        <ion-header-bar align-title="center" class="header-bg">
+            <div ng-if="userType==0"><a ui-sref="home" class="button icon-left ion-chevron-left button-clear button-dark" style="color: #fff;">Back</a></div>
+            <div ng-if="userType==1"><a ui-sref="washer-home" class="button icon-left ion-chevron-left button-clear button-dark" style="color: #fff;">Back</a></div>            
+            <h1 class="title">Legal</h1>
+        </ion-header-bar>
+        <ion-content overflow-scroll="false" has-bouncing="true" class="has-header">
+            <ion-item href="#/refund-policywasher">
+                <i class="icon icon ion-cash"></i>&nbsp;&nbsp;&nbsp;Refund Policy
+            </ion-item>
+            <ion-item href="#/pricing-of-serviceswasher">
+                <i class="icon icon ion-pricetag"></i>&nbsp;&nbsp;&nbsp;Pricing Of Services
+            </ion-item>
+            <ion-item href="#/privacy-policywasher">
+                <i class="icon icon ion-alert-circled"></i>&nbsp;&nbsp;&nbsp;Privacy
+            </ion-item>
+            <ion-item ui-sref="legalwasher2">
+                <i class="icon icon ion-shuffle"></i>&nbsp;&nbsp;&nbsp;Legal
+            </ion-item>
+
+        </ion-content>
+    </ion-pane>
+</ion-view>

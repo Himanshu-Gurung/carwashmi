@@ -1,0 +1,53 @@
+<ion-view class="splash-screen">
+    <ion-pane>
+      <ion-header-bar align-title="center" class="header-bg">
+        <div class="row">  
+          <div ui-sref="home" class="custom_space_top col col-20" style="padding: 0px;"><i class="icon ion-arrow-left-c" style="color: #fff;font-size: 30px;"></i></div>
+          <div class="col col-60"><h2 class="custon-car">My Cars</h2></div>
+          <div class="col" ng-click="storeClientDetails()" style="text-align: center; padding: 0px;"><i class="icon ion-plus-circled" style="color: #fff;font-size: 30px; line-height: 0px;"></i></div>
+        </div>
+      </ion-header-bar>
+      <ion-content overflow-scroll="false" has-bouncing="true" class="has-header">
+<!--           <ion-list>
+            <div ng-repeat="group in groups">
+              <ion-item class="item-stable"
+                        ng-click="toggleGroup(group)"
+                        ng-class="{active: isGroupShown(group)}">
+                  <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
+                &nbsp;
+                Group {{group.name}}
+              </ion-item>
+              <ion-item class="item-accordion"
+                        ng-repeat="item in group.items"
+                        ng-show="isGroupShown(group)">
+                {{item}}
+              </ion-item>
+            </div>
+          </ion-list> -->
+
+        <ion-list>
+          <div ng-show="display" ng-repeat="rs in result">
+            <ion-item class="item-stable" ng-click="toggleGroup(rs)" ng-class="{active: isGroupShown(rs)}">
+              <span style="float: left"><i class="icon" ng-class="isGroupShown(rs) ? 'ion-minus' : 'ion-plus'"></i>
+              &nbsp;
+              {{rs.vehicle_name}}</span>
+              <button class="button button-icon icon ion-ios-trash" ng-click="delete_car(rs.id)" style="float: right;
+margin-top: -12px;"></button>
+            </ion-item>
+            <ion-item class="item-accordion" ng-show="isGroupShown(rs)">
+              <p>Vehicle Name : {{rs.vehicle_name}}</p>
+              <p>Vehicle Make :{{rs.vehicle_make}}</p>
+              <p>Vehicle Model :{{rs.vehicle_model}}</p>
+              <p>Model Year :{{rs.vehicle_model_year}}</p>
+              <p>Vehicle Color :{{rs.vehicle_color}}</p>
+            </ion-item>
+          </div>
+          <div ng-hide="display">
+              <p class="item item-icon-left assertive">
+                No cars saved
+              </p>
+          </div>
+        </ion-list>
+      </ion-content>
+    </ion-pane>
+</ion-view>

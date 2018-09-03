@@ -1,0 +1,87 @@
+<ion-view class="splash-screen">
+    <ion-pane>
+        <ion-header-bar align-title="center" class="header-bg">
+            <div ui-sref="washer-home"<i class="icon ion-arrow-left-c" style="color: #fff;font-size: 30px;"></i></div>
+            <h1 class="title">My Profile</h1>
+        </ion-header-bar>
+        <ion-content overflow-scroll="false" has-bouncing="true" style="">
+            <div class="content  profile_edit">
+                <form novalidate name="washerForm" id="washerForm" ng-submit="validateWasherInput(washerForm,0)">
+                    <h2>Personal Information</h2>
+                    <div class="profile-form-row">
+                        <label>First Name</label>
+                        <input type="text" name="firstName" placeholder="Enter First Name"
+                               style="border:1px solid #ccc;color:#000;padding: 20px 0px 20px 10px;" ng-required="true"
+                               ng-model="user.first_name"/>
+                        <p class="error" style="color:red;"
+                           ng-show="washerForm.firstName.$error.required && washerForm.$submitted">First Name is
+                            required</p>
+                    </div>
+                    <div class="profile-form-row">
+                        <label>Last Name</label>
+                        <input type="text" name="lastName" placeholder="Enter Last Name"
+                               style="border:1px solid #ccc;color:#000;padding: 20px 0px 20px 10px;" ng-required="true"
+                               ng-model="user.last_name"/>
+                        <p class="error" style="color:red;"
+                           ng-show="washerForm.lastName.$error.required && washerForm.$submitted">Last Name is
+                            required</p>
+                    </div>
+                    <div class="profile-form-row">
+                        <label>Date of Birth</label>
+                        <input type="text" name="dob" placeholder="MM/DD/YYYY"
+                               ng-pattern='/^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ '
+                               style="border:1px solid #ccc;color:#000;padding: 20px 0px 20px 10px;"
+                               ng-model="user.dob" ng-required="true" />
+                        <p class="error" style="color:red;" ng-show="washerForm.dob.$error.required && washerForm.$submitted">Date Of Birth is required</p>
+                        <p class="error" style="color:red;" ng-show="clientForm.dob.$error.pattern">Incorrect Format,
+                            should be MM/DD/YYYY!</p>
+                    </div>
+                    <div class="profile-form-row">
+                      <label>Mobile Number</label>
+                      <input type="number" name="mobileNumber" placeholder="Enter Mobile Number" ng-model="user.mobile_number" style="border:1px solid #ccc;color:#000;padding: 0px !important;"/>
+                        <p class="error" style="color:red;" ng-show="washerForm.mobileNumber.$error.required && washerForm.$submitted">Mobile Number is required</p>
+                        <p class="error" style="color:red;" ng-show="washerForm.mobileNumber.$error.maxlength">Enter 10
+                            digit Mobile Number</p>
+                        <p class="error" style="color:red;" ng-show="washerForm.mobileNumber.$error.minlength">Enter 10
+                            digit Mobile Number</p> 
+                    </div>
+                    <div class="profile-form-row">
+                      <label>Paypal account for Payments</label>
+                      <input type="text" name="washer_paypal_email" placeholder="Enter Paypal Email" style="border:1px solid #ccc;color:#000;padding: 20px 0px 20px 10px;" ng-required="true" ng-model="user.washer_paypal_email"/>
+                        <p class="error" style="color:red;" ng-show="washerForm.washer_paypal_email.$error.required && washerForm.$submitted">Paypal Account is required</p>
+                    </div>
+                    <div class="profile-form-row">
+                      <label>Address</label>
+                      <input type="text" name="location" placeholder="Enter Location" ng-model="place" g-places-autocomplete ng-change="getGoogleLocation(place)" style="border:1px solid #ccc;color:#000;padding: 20px 0px 20px 10px;" ng-required="true"/>
+                        <p class="error" style="color:red;" ng-show="washerForm.location.$error.required && washerForm.$submitted">Location is required</p>
+                        <p ng-if="!placeSelected && place.length>0" class="error" style="color:red;">Select Correct location</p>
+                    </div>
+                    <h2>User Type</h2>
+                    <div class="profile-form-row" ng-click="changeUserType(0)">
+                        <span><input type="radio" name="userType" id="biker" checked="checked"/>Biker</span>
+                    </div>
+                    <div class="profile-form-row" ng-click="changeUserType(1)">
+                        <span><input type="radio" name="userType" id="driver"/>Driver</span>
+                    </div>
+                    <h2>Upload ID</h2>
+                    <label>Image Selected - {{image}}</label>
+                    <div class="button-bar" style="padding: 10px 10px 10px 10px;">
+                      <button class="button icon-left ion-camera button-positive" type="button" style="margin-right: 5px;background-color: #2d5a89;" ng-click="loadImage()" ng-disabled="false">Browse Image</button>
+                        <button class="button icon-left ion-upload button-positive" type="button" style="background-color: #2d5a89;" ng-click="uploadImage()" ng-disabled="image === null">Upload</button>
+                    </div>
+
+<!--                     <div class="profile-form-row">
+                      <ion-checkbox name="terms" ng-required="true" ng-click="showPopup()" ng-model="user.terms">Terms & Conditions</ion-checkbox>
+                      <p class="error" style="color:red;" ng-show="washerForm.terms.$error.required && washerForm.$submitted">Terms & Conditions is required</p>
+                    </div> -->
+                    <div class="profile-form-row">
+                        <button class="button" type="submit" ng-if="firstLoginVal=='0'" ng-disabled="washerForm.terms.$invalid">Next</button>
+                        <button class="button" type="button" ng-if="firstLoginVal=='1'" ng-click="enableEdit('0',1)">
+                            Edit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </ion-content>
+    </ion-pane>
+</ion-view>

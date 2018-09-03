@@ -1,0 +1,62 @@
+<ion-view class="splash-screen">
+    <ion-pane>
+        <ion-header-bar align-title="center" class="header-bg">
+            <div ng-click="goBack()"><i class="ion-ios-arrow-back" style="color: #fff;font-size: 30px;"></i></div>
+            <h1 class="title">My Services</h1>
+        </ion-header-bar>
+        <ion-content overflow-scroll="false" has-bouncing="true" style="margin-top:-44px;">
+            <div class="content has-header profile_edit">
+                <form novalidate name="washerForm" id="washerForm" ng-submit="validateWasherInput(washerForm,1)">
+                    <h2>Services</h2>
+                    <div class="profile-form-row" ng-click="changeServiceType(3)">
+                        <span>
+                            <input type="checkbox" name="serviceType" id="fast" ng-model="user.is_fast_service"
+                                     ng-checked="user.is_fast_service"/>
+                            <h2>Fast</h2>
+                            <p>Hand Wash (exterior + tire)</p>
+                            <p>Vacuum</p>
+                        </span>
+                    </div>
+                    <div class="profile-form-row" ng-click="changeServiceType(1)">
+                        <span>
+                            <input type="checkbox" name="serviceType" id="standard"
+                                     ng-model="user.is_standard_service" ng-checked="user.is_standard_service"/>
+                            <h2>Standard</h2>
+                            <p>Hand Wash (exterior + tire)</p>
+                            <p>Vacuum + Wipe Down</p>
+                            <p>Tire Shine</p>
+                        </span>
+                    </div>
+                    <div class="profile-form-row" ng-click="changeServiceType(0)">
+                        <span>
+                            <input type="checkbox" name="serviceType" id="elite" ng-model="user.is_elite_service"
+                                     ng-checked="user.is_elite_service"/>
+                            <h2>Elite</h2>
+                            <p>Standard + Full interior Shine</p>
+                        </span>
+                    </div>
+                    <div class="profile-form-row" ng-click="changeServiceType(2)">
+                        <span>
+                            <input type="checkbox" name="serviceType" id="premium" ng-model="user.is_premium_service"
+                                     ng-checked="user.is_premium_service"/>
+                            <h2>Premium</h2>
+                            <p>Standard + Interior Tire</p>
+                            <p>Leather seat treatment</p>
+                            <p>Exterior Waxing</p>
+                        </span>
+                    </div>
+                    <div class="profile-form-row">
+                      <ion-checkbox name="terms" ng-required="true" ng-click="showPopup()" ng-model="user.terms">Terms & Conditions</ion-checkbox>
+                      <p class="error" style="color:red;" ng-show="washerForm.terms.$error.required && washerForm.$submitted">Terms & Conditions is required</p>
+                    </div>
+                    <div class="profile-form-row">
+                        <button class="button" type="submit" ng-if="firstLoginVal=='0'" ng-disabled="washerForm.terms.$invalid">Next</button>
+                        <button class="button" type="button" ng-if="firstLoginVal=='1'" ng-click="enableEdit('0',3)">
+                            Edit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </ion-content>
+    </ion-pane>
+</ion-view>

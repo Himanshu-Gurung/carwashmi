@@ -1,0 +1,71 @@
+<ion-view class="splash-screen">
+    <ion-pane>
+        <ion-header-bar align-title="center" class="header-bg">
+            <div ui-sref="washer-notification"><i class="icon ion-arrow-left-c"
+                                                  style="color: #fff;font-size: 30px;"></i></div>
+            <h1 class="title">Request Form</h1>
+        </ion-header-bar>
+        <ion-content overflow-scroll="false" has-bouncing="true" class="has-header">
+            <div class="content has-header washer_detail custom_top"><!--has-header-expand"-->
+                <div class="wash_counter custom_cars">
+                    <div style="background:#3fb3c0; padding:5px 10px;" ng-if="clientRequest.customer_rating!=0">
+                     
+                Rated:  <ionic-ratings ratingsobj='ratingsObject' index='0' style="font-size: xx-large; pointer-events:none !important;" />
+
+                </div>
+                    <img src="images/washer_img.png" alt="image"/>
+                    <ul>
+                        <!-- <li><span><p>Car</p>Vehicle type</span></li> -->
+                    </ul>
+                </div>
+
+                <button style="background:#000;padding:10px;color:white;text-align:center "
+                        ng-if="clientRequest.is_request_open=='8'" class="button button-block bar-dark"
+                        ng-click="rateCustomer(clientRequest.client_request_id,clientRequest.user_id)">Rate Customer
+                </button>
+
+
+                <h3>Customer Detail</h3>
+                <div class="washer_detail_row">
+                    <h4>Name</h4>
+                    <p>{{clientRequest.first_name+" "+clientRequest.last_name}}</p>
+                </div>
+                <div class="washer_detail_row">
+                    <h4>Customer Location</h4>
+                    <p>{{clientRequest.location}}</p>
+                </div>
+                <div class="washer_detail_row">
+                    <h4>Distance</h4>
+                    <p>{{distance}}</p> 
+                </div>
+                <div class="washer_detail_row">
+                    <h4>Service Type</h4>
+                    <p ng-if="clientRequest.service_type==0">Elite Service</p>
+                    <p ng-if="clientRequest.service_type==1">Premium Service</p>
+                    <p ng-if="clientRequest.service_type==2">Standard Service</p>
+                    <p ng-if="clientRequest.service_type==3">Fast Service</p>
+                </div>
+            </div>
+        </ion-content>
+        <div class="action_footer">
+            <ul ng-if="is_washer_accepted==0">
+                <li>
+                    <button class="accept_button" ng-click="submitResponse(1)">Accept</button>
+                </li>
+                <li>
+                    <button class="decline_button" ng-click="submitResponse(2)">Reject</button>
+                </li>
+            </ul>
+            <ul ng-if="is_washer_accepted==2 || is_washer_accepted==3">
+                <li style="width:100%">
+                    <button class="decline_button">Rejected</button>
+                </li>
+            </ul>
+            <ul ng-if="is_washer_accepted==1">
+                <li style="width:100%">
+                    <button class="accept_button">Rated</button>
+                </li>
+            </ul>
+        </div>
+    </ion-pane>
+</ion-view>

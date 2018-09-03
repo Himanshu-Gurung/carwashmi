@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "521853970492",
+    "firebase_url": "https://carwashme-66616.firebaseio.com",
+    "project_id": "carwashme-66616",
+    "storage_bucket": "carwashme-66616.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521853970492:android:9f58177d4a8cf239",
+        "android_client_info": {
+          "package_name": "com.carwashmi.esfera"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "521853970492-iv6vea068e8jh6ej09r03hl6tnk3krpd.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "521853970492-iv6vea068e8jh6ej09r03hl6tnk3krpd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmWmG2hSayXmW2z4rU8R_cIaEeXICIJ9k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

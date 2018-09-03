@@ -1,0 +1,92 @@
+.record-animation {
+    animation: recordanimationFrames linear 1s;
+    animation-iteration-count: infinite;
+    transform-origin: 50% 50%;
+    -webkit-animation: recordanimationFrames linear 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transform-origin: 50% 50%;
+    -moz-animation: recordanimationFrames linear 1s;
+    -moz-animation-iteration-count: infinite;
+    -moz-transform-origin: 50% 50%;
+    -o-animation: recordanimationFrames linear 1s;
+    -o-animation-iteration-count: infinite;
+    -o-transform-origin: 50% 50%;
+    -ms-animation: recordanimationFrames linear 1s;
+    -ms-animation-iteration-count: infinite;
+    -ms-transform-origin: 50% 50%;
+}
+
+@keyframes recordanimationFrames {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    37% {
+        transform: translate(0px, 5px);
+    }
+    74% {
+        transform: translate(0px, -5px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+@-moz-keyframes recordanimationFrames {
+    0% {
+        -moz-transform: translate(0px, 0px);
+    }
+    37% {
+        -moz-transform: translate(0px, 5px);
+    }
+    74% {
+        -moz-transform: translate(0px, -5px);
+    }
+    100% {
+        -moz-transform: translate(0px, 0px);
+    }
+}
+
+@-webkit-keyframes recordanimationFrames {
+    0% {
+        -webkit-transform: translate(0px, 0px);
+    }
+    37% {
+        -webkit-transform: translate(0px, 5px);
+    }
+    74% {
+        -webkit-transform: translate(0px, -5px);
+    }
+    100% {
+        -webkit-transform: translate(0px, 0px);
+    }
+}
+
+@-o-keyframes recordanimationFrames {
+    0% {
+        -o-transform: translate(0px, 0px);
+    }
+    37% {
+        -o-transform: translate(0px, 5px);
+    }
+    74% {
+        -o-transform: translate(0px, -5px);
+    }
+    100% {
+        -o-transform: translate(0px, 0px);
+    }
+}
+
+@-ms-keyframes recordanimationFrames {
+    0% {
+        -ms-transform: translate(0px, 0px);
+    }
+    37% {
+        -ms-transform: translate(0px, 5px);
+    }
+    74% {
+        -ms-transform: translate(0px, -5px);
+    }
+    100% {
+        -ms-transform: translate(0px, 0px);
+    }
+}

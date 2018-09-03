@@ -1,0 +1,20 @@
+<ion-view view-title="Team" name="team-view">
+    <ion-content class="padding">
+        <ion-list>
+            <ion-item ng-repeat="item in data">
+
+
+                <a class="item item-avatar" class="item item-avatar" href="#/tab/profiledetail/{{item.id}}">
+                    <img ng-src="{{ item.image }}">
+                    <h2>{{ item.first_name }} {{ item.last_name }}</h2>
+                    <p>{{ item.phone_no }}</p>
+                </a>
+
+
+            </ion-item>
+
+        </ion-list>
+    </ion-content>
+
+</ion-view>
+

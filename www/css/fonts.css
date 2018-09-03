@@ -1,0 +1,127 @@
+@font-face {
+    font-family: 'yantramanav_light';
+    src: url('./fonts/Yantramanav-Light.eot');
+    src: url('./fonts/Yantramanav-Light.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/Yantramanav-Light.woff') format('woff'),
+    url('./fonts/Yantramanav-Light.ttf') format('truetype'),
+    url('./fonts/Yantramanav-Light.svg#Yantramanav-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'yantramanav_regular';
+    src: url('./fonts/Yantramanav-Regular.eot');
+    src: url('./fonts/Yantramanav-Regular.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/Yantramanav-Regular.woff') format('woff'),
+    url('./fonts/Yantramanav-Regular.ttf') format('truetype'),
+    url('./fonts/Yantramanav-Regular.svg#Yantramanav-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'yantramanav_medium';
+    src: url('./fonts/Yantramanav-Medium.eot');
+    src: url('./fonts/Yantramanav-Medium.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/Yantramanav-Medium.woff') format('woff'),
+    url('./fonts/Yantramanav-Medium.ttf') format('truetype'),
+    url('./fonts/Yantramanav-Medium.svg#Yantramanav-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'yantramanav_bold';
+    src: url('./fonts/Yantramanav-Bold.eot');
+    src: url('./fonts/Yantramanav-Bold.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/Yantramanav-Bold.woff') format('woff'),
+    url('./fonts/Yantramanav-Bold.ttf') format('truetype'),
+    url('./fonts/Yantramanav-Bold.svg#Yantramanav-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'iconew';
+    src: url('./fonts/iconew.eot?thztw4');
+    src: url('./fonts/iconew.eot?thztw4#iefix') format('embedded-opentype'),
+    url('./fonts/iconew.ttf?thztw4') format('truetype'),
+    url('./fonts/iconew.woff?thztw4') format('woff'),
+    url('./fonts/iconew.svg?thztw4#iconew') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="iconnew-"], [class*=" iconnew-"] {
+    font-family: 'iconew' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.iconnew-close:before {
+    content: "\e90e";
+}
+
+.iconnew-list:before {
+    content: "\e90b";
+}
+
+.iconnew-location:before {
+    content: "\e90c";
+}
+
+.iconnew-star:before {
+    content: "\e90d";
+}
+
+.iconnew-add-button:before {
+    content: "\e900";
+}
+
+.iconnew-calander:before {
+    content: "\e901";
+}
+
+.iconnew-facebook-icon:before {
+    content: "\e902";
+}
+
+.iconnew-help:before {
+    content: "\e903";
+}
+
+.iconnew-lock:before {
+    content: "\e904";
+}
+
+.iconnew-menu_message:before {
+    content: "\e905";
+}
+
+.iconnew-message:before {
+    content: "\e906";
+}
+
+.iconnew-next:before {
+    content: "\e907";
+}
+
+.iconnew-profile:before {
+    content: "\e908";
+}
+
+.iconnew-search:before {
+    content: "\e909";
+}
+
+.iconnew-wifi:before {
+    content: "\e90a";
+}
+

@@ -1,0 +1,27 @@
+<ion-view class="splash-screen">
+    <ion-pane>
+        <ion-header-bar align-title="center" class="header-bg">
+            <div ui-sref="washer-home"><i class="icon ion-arrow-left-c" style="color: #fff;font-size: 30px;"></i></div>
+            <h1 class="title">History</h1>
+        </ion-header-bar>
+        <div class="custom_req">
+        <ion-content overflow-scroll="false" has-bouncing="true">
+            <div style="text-align:center;margin-top:10%;" ng-show="notificationList.length==0">No Record Found!</div>
+            <div class="notification-row" ng-repeat="notification in notificationList">
+                <div class="notification-row-left">
+                    <img src="images/car_wash2.png" alt="image"/>
+                </div>
+                <div class="notification-row-right" ng-click="gotoResponse(notification)">
+                    <span class="">Customer <p>{{notification.first_name}} {{notification.last_name}}</p></span>
+                    <span class="">Customer Mobile <p>{{notification.mobile_number}}</p></span>
+                    <span class="" ng-if="notification.vehicle_type==0">Type of vehicle<p>Sedan</p></span>
+                    <span class="" ng-if="notification.vehicle_type==1">Type of vehicle<p>SUV</p></span>
+                    <span class="" ng-if="notification.vehicle_type==2">Type of vehicle<p>Truck</p></span>
+                    <span class="">Service Cost<p>{{notification.washer_received_amount}}</p></span>
+                </div>
+            </div>
+            </div>
+        </ion-content>
+        </div>
+    </ion-pane>
+</ion-view>
